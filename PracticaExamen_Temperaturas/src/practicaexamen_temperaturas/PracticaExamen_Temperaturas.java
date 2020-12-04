@@ -19,11 +19,15 @@ public class PracticaExamen_Temperaturas {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner teclado = new Scanner(System.in);
-        System.out.print("Introduce una temperatura: ");
-        double temp = teclado.nextDouble();
-        double kelvin = temp + 273.15;
-        System.out.printf("%,.2fºC equivale a %,.2fK\n", temp, kelvin);
-
+        char opc;
+        do {
+            System.out.print("Introduce una temperatura: ");
+            double temp = teclado.nextDouble();
+            double kelvin = temp + 273.15;
+            System.out.printf("%,.2fºC equivale a %,.2fK\n", temp, kelvin);
+            System.out.println("Deseas continuar Si/No");
+            opc = teclado.next().charAt(0);
+        } while (opc == 'S' || opc == 's');
     }
 
 }
